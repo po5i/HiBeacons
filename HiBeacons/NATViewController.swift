@@ -514,11 +514,48 @@ extension NATViewController: NATMonitoringOperationDelegate
         print("-- po5i: notify --")
         let notification = UILocalNotification()
 
-        notification.alertBody = "Entered beacon region for UUID: " + region.proximityUUID.UUIDString
+        //notification.alertBody = "Entered beacon region for UUID: " + region.proximityUUID.UUIDString
+        notification.alertBody = "Carmina needs your help. Are you close to the Boardroom?"
         notification.alertAction = "View Details"
         notification.soundName = UILocalNotificationDefaultSoundName
 
         UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+        
+        // TODO: send API call
+        executeAPIService()
+    }
+    
+    func executeAPIService() {
+        
+        // for test use direct message e.g. @kiichi
+        let payload = "payload={\"channel\": \"@po5i\", \"text\": \"Alert triggered from app (simulate backend call)\"}"
+        let data = (payload as NSString).dataUsingEncoding(NSUTF8StringEncoding)
+        if let url = NSURL(string: "https://hooks.slack.com/services/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")
+        {
+            let request = NSMutableURLRequest(URL: url)
+            request.HTTPMethod = "POST"
+            request.HTTPBody = data
+            let session = NSURLSession.sharedSession()
+            let task = session.dataTaskWithRequest(request){
+                (data, response, error) -> Void in
+                if error != nil {
+                    print("error: \(error!.localizedDescription): \(error!.userInfo)")
+                }
+                else if data != nil {
+                    if let str = NSString(data: data!, encoding: NSUTF8StringEncoding) {
+                        print("\(str)")
+                    }
+                    else {
+                        print("error")
+                    }
+                }
+            }
+            task.resume()
+        }
+        else {
+            print("url invalid")
+        }
+        
     }
 }
 
