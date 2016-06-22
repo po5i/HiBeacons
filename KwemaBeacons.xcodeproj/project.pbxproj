@@ -34,8 +34,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CF2BC91F18019D6100C66D15 /* HiBeacons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiBeacons.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF2BC92A18019D6100C66D15 /* HiBeacons-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HiBeacons-Info.plist"; sourceTree = "<group>"; };
+		CF2BC91F18019D6100C66D15 /* KwemaBeacons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KwemaBeacons.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF2BC92A18019D6100C66D15 /* KwemaBeacons-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KwemaBeacons-Info.plist"; sourceTree = "<group>"; };
 		CF2BC92C18019D6100C66D15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF2BC93418019D6100C66D15 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CF2BC9511801A09D00C66D15 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		CF2BC92018019D6100C66D15 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CF2BC91F18019D6100C66D15 /* HiBeacons.app */,
+				CF2BC91F18019D6100C66D15 /* KwemaBeacons.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,7 +100,7 @@
 		CF2BC92918019D6100C66D15 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CF2BC92A18019D6100C66D15 /* HiBeacons-Info.plist */,
+				CF2BC92A18019D6100C66D15 /* KwemaBeacons-Info.plist */,
 				CF2BC92B18019D6100C66D15 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -130,9 +130,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CF2BC91E18019D6100C66D15 /* HiBeacons */ = {
+		CF2BC91E18019D6100C66D15 /* KwemaBeacons */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF2BC94B18019D6100C66D15 /* Build configuration list for PBXNativeTarget "HiBeacons" */;
+			buildConfigurationList = CF2BC94B18019D6100C66D15 /* Build configuration list for PBXNativeTarget "KwemaBeacons" */;
 			buildPhases = (
 				CF2BC91B18019D6100C66D15 /* Sources */,
 				CF2BC91C18019D6100C66D15 /* Frameworks */,
@@ -143,9 +143,9 @@
 			);
 			dependencies = (
 			);
-			name = HiBeacons;
+			name = KwemaBeacons;
 			productName = HiBeacons;
-			productReference = CF2BC91F18019D6100C66D15 /* HiBeacons.app */;
+			productReference = CF2BC91F18019D6100C66D15 /* KwemaBeacons.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -172,7 +172,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CF2BC91A18019D6100C66D15 /* Build configuration list for PBXProject "HiBeacons" */;
+			buildConfigurationList = CF2BC91A18019D6100C66D15 /* Build configuration list for PBXProject "KwemaBeacons" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -185,7 +185,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CF2BC91E18019D6100C66D15 /* HiBeacons */,
+				CF2BC91E18019D6100C66D15 /* KwemaBeacons */,
 			);
 		};
 /* End PBXProject section */
@@ -314,11 +314,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HiBeacons/HiBeacons-Prefix.pch";
-				INFOPLIST_FILE = "HiBeacons/HiBeacons-Info.plist";
+				INFOPLIST_FILE = "HiBeacons/KwemaBeacons-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.po5i.HiBeacons;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.po5i.KwemaBeacons;
+				PRODUCT_NAME = KwemaBeacons;
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -337,11 +337,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HiBeacons/HiBeacons-Prefix.pch";
-				INFOPLIST_FILE = "HiBeacons/HiBeacons-Info.plist";
+				INFOPLIST_FILE = "HiBeacons/KwemaBeacons-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.po5i.HiBeacons;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.po5i.KwemaBeacons;
+				PRODUCT_NAME = KwemaBeacons;
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -353,7 +353,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CF2BC91A18019D6100C66D15 /* Build configuration list for PBXProject "HiBeacons" */ = {
+		CF2BC91A18019D6100C66D15 /* Build configuration list for PBXProject "KwemaBeacons" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF2BC94918019D6100C66D15 /* Debug */,
@@ -362,7 +362,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CF2BC94B18019D6100C66D15 /* Build configuration list for PBXNativeTarget "HiBeacons" */ = {
+		CF2BC94B18019D6100C66D15 /* Build configuration list for PBXNativeTarget "KwemaBeacons" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF2BC94C18019D6100C66D15 /* Debug */,
