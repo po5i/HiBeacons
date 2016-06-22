@@ -511,6 +511,7 @@ extension NATViewController: NATMonitoringOperationDelegate
         :param: region The given CLBeaconRegion instance.
      */
     func sendLocalNotificationForBeaconRegion(region: CLBeaconRegion) {
+        print("-- po5i: notify --")
         let notification = UILocalNotification()
 
         notification.alertBody = "Entered beacon region for UUID: " + region.proximityUUID.UUIDString
@@ -640,6 +641,7 @@ extension NATViewController: NATRangingOperationDelegate
      */
     func rangingOperationDidRangeBeacons(beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            print(" > region: " + region.identifier)
             let filteredBeacons = self.filteredBeacons(beacons as! [CLBeacon])
 
             if filteredBeacons.isEmpty {
@@ -672,9 +674,11 @@ extension NATViewController: NATRangingOperationDelegate
                 self.beaconTableView.deleteSections(self.deletedSections()!, withRowAnimation: UITableViewRowAnimation.Fade)
             }
             if insertedRows != nil {
+                print(".. insert ar idx")
                 self.beaconTableView.insertRowsAtIndexPaths(insertedRows!, withRowAnimation: UITableViewRowAnimation.Fade)
             }
             if deletedRows != nil {
+                print(".. delete at idx")
                 self.beaconTableView.deleteRowsAtIndexPaths(deletedRows!, withRowAnimation: UITableViewRowAnimation.Fade)
             }
             if reloadedRows != nil {

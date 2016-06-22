@@ -46,8 +46,19 @@ import WatchConnectivity
             mainSession!.activateSession()
         }
         
+        let notificationType:UIUserNotificationType = [UIUserNotificationType.Sound, UIUserNotificationType.Alert]
+        let notificationSettings = UIUserNotificationSettings(forTypes: notificationType, categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        
         return true
     }
+    
+    /*func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+        //registering for sending user various kinds of notifications
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound|UIUserNotificationType.Alert |UIUserNotificationType.Badge, categories: nil)
+            // Override point for customization after application launch.
+            return true
+    }*/
 
     // MARK: WCSessionDelegate methods
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {

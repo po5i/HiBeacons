@@ -108,6 +108,10 @@ class NATRangingOperation: NATOperation
     func turnOnRanging() {
         locationManager.startRangingBeaconsInRegion(beaconRegion)
         print("Ranging turned on for beacons in region: \(beaconRegion)")
+        
+        locationManager.startRangingBeaconsInRegion(beaconRegion2)
+        print("Ranging turned on for beacons in region2: \(beaconRegion2)")
+        
         delegate?.rangingOperationDidStartSuccessfully()
     }
 
@@ -121,6 +125,7 @@ class NATRangingOperation: NATOperation
         }
 
         locationManager.stopRangingBeaconsInRegion(beaconRegion)
+        locationManager.stopRangingBeaconsInRegion(beaconRegion2)
 
         delegate?.rangingOperationDidStopSuccessfully()
         

@@ -103,6 +103,10 @@ class NATMonitoringOperation: NATOperation
     func turnOnMonitoring() {
         locationManager.startMonitoringForRegion(beaconRegion)
         print("Monitoring turned on for region: \(beaconRegion)")
+        
+        locationManager.startMonitoringForRegion(beaconRegion2)
+        print("Monitoring turned on for region: \(beaconRegion2)")
+        
         delegate?.monitoringOperationDidStartSuccessfully()
     }
 
@@ -112,6 +116,10 @@ class NATMonitoringOperation: NATOperation
     func stopMonitoringForBeacons() {
         locationManager.stopMonitoringForRegion(beaconRegion)
         print("Turned off monitoring")
+        
+        locationManager.stopMonitoringForRegion(beaconRegion2)
+        print("Turned off monitoring")
+        
         delegate?.monitoringOperationDidStopSuccessfully()
     }
 }
