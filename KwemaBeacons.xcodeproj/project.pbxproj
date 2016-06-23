@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A264E7321D1B523300326106 /* OnboardingPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A264E7311D1B523200326106 /* OnboardingPager.swift */; };
+		A264E7341D1B553D00326106 /* StepZero.swift in Sources */ = {isa = PBXBuildFile; fileRef = A264E7331D1B553D00326106 /* StepZero.swift */; };
+		A264E73C1D1B5A9500326106 /* StepOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = A264E73B1D1B5A9500326106 /* StepOne.swift */; };
+		A264E73E1D1B5AB000326106 /* StepTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A264E73D1D1B5AB000326106 /* StepTwo.swift */; };
+		A264E7401D1B5AC400326106 /* StepThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = A264E73F1D1B5AC400326106 /* StepThree.swift */; };
 		CF2BC92D18019D6100C66D15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF2BC92B18019D6100C66D15 /* InfoPlist.strings */; };
 		CF2BC93518019D6100C66D15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2BC93418019D6100C66D15 /* Images.xcassets */; };
 		CF2BC9521801A09D00C66D15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2BC9511801A09D00C66D15 /* Main.storyboard */; };
@@ -34,6 +39,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A264E7311D1B523200326106 /* OnboardingPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPager.swift; sourceTree = "<group>"; };
+		A264E7331D1B553D00326106 /* StepZero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepZero.swift; sourceTree = "<group>"; };
+		A264E73B1D1B5A9500326106 /* StepOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepOne.swift; sourceTree = "<group>"; };
+		A264E73D1D1B5AB000326106 /* StepTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTwo.swift; sourceTree = "<group>"; };
+		A264E73F1D1B5AC400326106 /* StepThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepThree.swift; sourceTree = "<group>"; };
 		CF2BC91F18019D6100C66D15 /* KwemaBeacons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KwemaBeacons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2BC92A18019D6100C66D15 /* KwemaBeacons-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KwemaBeacons-Info.plist"; sourceTree = "<group>"; };
 		CF2BC92C18019D6100C66D15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -89,6 +99,11 @@
 			children = (
 				CF96E4C61B5ED80E00285986 /* NATHiBeaconsDelegate.swift */,
 				CF96E4CC1B5F152700285986 /* NATViewController.swift */,
+				A264E7311D1B523200326106 /* OnboardingPager.swift */,
+				A264E7331D1B553D00326106 /* StepZero.swift */,
+				A264E73B1D1B5A9500326106 /* StepOne.swift */,
+				A264E73D1D1B5AB000326106 /* StepTwo.swift */,
+				A264E73F1D1B5AC400326106 /* StepThree.swift */,
 				CFE8B47D1B6538EC008CB9A4 /* NATOperationCell.swift */,
 				CFE8B4871B65AD35008CB9A4 /* NATOperation Hierarchy */,
 				CF96E4C91B5EE7DB00285986 /* Resources */,
@@ -211,8 +226,13 @@
 			files = (
 				CF96E4CD1B5F152700285986 /* NATViewController.swift in Sources */,
 				CFE8B4801B655D6B008CB9A4 /* NATOperation.swift in Sources */,
+				A264E7401D1B5AC400326106 /* StepThree.swift in Sources */,
+				A264E7321D1B523300326106 /* OnboardingPager.swift in Sources */,
 				CFE8B4861B655E4E008CB9A4 /* NATAdvertisingOperation.swift in Sources */,
+				A264E73C1D1B5A9500326106 /* StepOne.swift in Sources */,
 				CFE8B4841B655E1A008CB9A4 /* NATRangingOperation.swift in Sources */,
+				A264E7341D1B553D00326106 /* StepZero.swift in Sources */,
+				A264E73E1D1B5AB000326106 /* StepTwo.swift in Sources */,
 				CFE8B4821B655DB6008CB9A4 /* NATMonitoringOperation.swift in Sources */,
 				CFE8B47E1B6538EC008CB9A4 /* NATOperationCell.swift in Sources */,
 				CF96E4C71B5ED80E00285986 /* NATHiBeaconsDelegate.swift in Sources */,

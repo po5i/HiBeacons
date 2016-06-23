@@ -526,7 +526,6 @@ extension NATViewController: NATMonitoringOperationDelegate
     }
     
     func executeAPIService() {
-        
         // for test use direct message e.g. @kiichi
         let payload = "payload={\"channel\": \"@po5i\", \"text\": \"Alert triggered from app (simulate backend call)\"}"
         let data = (payload as NSString).dataUsingEncoding(NSUTF8StringEncoding)
