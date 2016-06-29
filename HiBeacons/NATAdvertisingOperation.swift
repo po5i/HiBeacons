@@ -81,7 +81,7 @@ class NATAdvertisingOperation: NATOperation
     func turnOnAdvertising() {
         let major: CLBeaconMajorValue = CLBeaconMajorValue(arc4random_uniform(5000))
         let minor: CLBeaconMinorValue = CLBeaconMajorValue(arc4random_uniform(5000))
-        let region: CLBeaconRegion = CLBeaconRegion(proximityUUID: beaconRegion.proximityUUID, major: major, minor: minor, identifier: beaconRegion.identifier)
+        let region: CLBeaconRegion = CLBeaconRegion(proximityUUID: adverBeaconRegion.proximityUUID, major: major, minor: minor, identifier: adverBeaconRegion.identifier)
         let beaconPeripheralData: NSDictionary = region.peripheralDataWithMeasuredPower(nil) as NSDictionary
 
         peripheralManager.startAdvertising(beaconPeripheralData as? [String : AnyObject])

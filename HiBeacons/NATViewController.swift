@@ -180,11 +180,16 @@ extension NATViewController
         :param: beacons An array of CLBeacon objects.
         :returns: An array of NSIndexPaths corresponding to positions in the table view where these beacons are.
      */
-    func indexPathsOfRemovedBeacons(beacons: [CLBeacon]) -> [NSIndexPath]? {
+    func indexPathsOfRemovedBeacons(beacons: [CLBeacon], inRegion region: CLBeaconRegion) -> [NSIndexPath]? {
         var indexPaths: [NSIndexPath]?
-
         var row = 0
         for existingBeacon in detectedBeacons {
+            
+            // po5i: do not delete previous inserted beacons, check first if region existingBeacon.uuid == region.uuid
+            //if existingBeacon.proximityUUID.UUIDString != region.proximityUUID.UUIDString {
+            //    continue
+            //}
+            
             var stillExists = false
             for beacon in beacons {
                 if existingBeacon.major.integerValue == beacon.major.integerValue && existingBeacon.minor.integerValue == beacon.minor.integerValue {
@@ -212,9 +217,9 @@ extension NATViewController
         :param: beacons An array of CLBeacon objects.
         :returns: An array of NSIndexPaths corresponding to positions in the table view where these beacons are.
      */
-    func indexPathsOfInsertedBeacons(beacons: [CLBeacon]) -> [NSIndexPath]? {
+    func indexPathsOfInsertedBeacons(beacons: [CLBeacon], inRegion region: CLBeaconRegion) -> [NSIndexPath]? {
         var indexPaths: [NSIndexPath]?
-
+        
         var row = 0
         for beacon in beacons {
             var isNewBeacon = true
@@ -248,6 +253,17 @@ extension NATViewController
             indexPaths.append(NSIndexPath(forRow: row, inSection: NTSectionType.DetectedBeacons.rawValue))
         }
 
+        return indexPaths
+    }
+    
+    // Alternate version
+    func indexPathsForBeaconsBasedOnTable(totalRows: Int) -> [NSIndexPath] {
+        var indexPaths = [NSIndexPath]()
+        
+        for row in 0..<totalRows {
+            indexPaths.append(NSIndexPath(forRow: row, inSection: NTSectionType.DetectedBeacons.rawValue))
+        }
+        
         return indexPaths
     }
 
@@ -679,9 +695,8 @@ extension NATViewController: NATRangingOperationDelegate
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
             print(" > region: " + region.identifier)
             let filteredBeacons = self.filteredBeacons(beacons as! [CLBeacon])
-
             if filteredBeacons.isEmpty {
-                print("No beacons found nearby.")
+                print("* No beacons found nearby.")
             } else {
                 let beaconsString: String
 
@@ -690,11 +705,11 @@ extension NATViewController: NATRangingOperationDelegate
                 } else {
                     beaconsString = "beacon"
                 }
-                print("Found \(filteredBeacons.count) \(beaconsString).")
+                print("* Found \(filteredBeacons.count) \(beaconsString).")
             }
 
-            let insertedRows = self.indexPathsOfInsertedBeacons(filteredBeacons)
-            let deletedRows = self.indexPathsOfRemovedBeacons(filteredBeacons)
+            let insertedRows = self.indexPathsOfInsertedBeacons(filteredBeacons, inRegion: region)
+            let deletedRows = self.indexPathsOfRemovedBeacons(filteredBeacons, inRegion: region)
             var reloadedRows: [NSIndexPath]?
             if deletedRows == nil && insertedRows == nil {
                 reloadedRows = self.indexPathsForBeacons(filteredBeacons)
@@ -709,12 +724,11 @@ extension NATViewController: NATRangingOperationDelegate
             if self.deletedSections() != nil {
                 self.beaconTableView.deleteSections(self.deletedSections()!, withRowAnimation: UITableViewRowAnimation.Fade)
             }
+            
             if insertedRows != nil {
-                print(".. insert ar idx")
                 self.beaconTableView.insertRowsAtIndexPaths(insertedRows!, withRowAnimation: UITableViewRowAnimation.Fade)
             }
             if deletedRows != nil {
-                print(".. delete at idx")
                 self.beaconTableView.deleteRowsAtIndexPaths(deletedRows!, withRowAnimation: UITableViewRowAnimation.Fade)
             }
             if reloadedRows != nil {

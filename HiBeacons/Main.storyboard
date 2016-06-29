@@ -155,7 +155,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="1sc-Kj-V27" customClass="OnboardingPager" customModule="KwemaBeacons" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSb-SN-6OH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1503" y="667"/>
+            <point key="canvasLocation" x="1601" y="568"/>
         </scene>
         <!--Step Two-->
         <scene sceneID="Ofu-sI-NL5">
@@ -204,7 +204,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbp-0z-kCK">
                                 <rect key="frame" x="132" y="476" width="56" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="idDismissOnboarding:" destination="f7B-ir-FYq" eventType="touchUpInside" id="4ga-44-dcr"/>
                                 </connections>

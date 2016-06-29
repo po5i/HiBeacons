@@ -101,11 +101,17 @@ class NATMonitoringOperation: NATOperation
         Turns on monitoring (after all the checks have been passed).
      */
     func turnOnMonitoring() {
-        locationManager.startMonitoringForRegion(beaconRegion)
-        print("Monitoring turned on for region: \(beaconRegion)")
+        let regions = getRegions()
+        for beaconRegion in regions {
+            locationManager.startMonitoringForRegion(beaconRegion)
+            print("Monitoring turned on for region: \(beaconRegion)")
+        }
         
-        locationManager.startMonitoringForRegion(beaconRegion2)
-        print("Monitoring turned on for region: \(beaconRegion2)")
+        //locationManager.startMonitoringForRegion(beaconRegion)
+        //print("Monitoring turned on for region: \(beaconRegion)")
+        
+        //locationManager.startMonitoringForRegion(beaconRegion2)
+        //print("Monitoring turned on for region: \(beaconRegion2)")
         
         delegate?.monitoringOperationDidStartSuccessfully()
     }
@@ -114,11 +120,16 @@ class NATMonitoringOperation: NATOperation
         Stops the monitoring process.
      */
     func stopMonitoringForBeacons() {
-        locationManager.stopMonitoringForRegion(beaconRegion)
-        print("Turned off monitoring")
+        let regions = getRegions()
+        for beaconRegion in regions {
+            locationManager.stopMonitoringForRegion(beaconRegion)
+            print("Turned off monitoring")
+        }
+        //locationManager.stopMonitoringForRegion(beaconRegion)
+        //print("Turned off monitoring")
         
-        locationManager.stopMonitoringForRegion(beaconRegion2)
-        print("Turned off monitoring")
+        //locationManager.stopMonitoringForRegion(beaconRegion2)
+        //print("Turned off monitoring")
         
         delegate?.monitoringOperationDidStopSuccessfully()
     }

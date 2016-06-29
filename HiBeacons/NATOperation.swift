@@ -32,21 +32,29 @@ class NATOperation: NSObject, CLLocationManagerDelegate
 {
     /// An instance of CLLocationManager to provide monitoring and ranging facilities.
     lazy var locationManager: CLLocationManager = CLLocationManager()
-    // "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0" //Lilipad 1234 - 5678
     // "388891FA-7BB4-4A74-B127-6E240E7151A4" //Radius 1234 - 5555
+    // "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0" //Lilipad 1234 - 5678
+    
 
-    /// The beacon region that will be used as the reference for monitoring and ranging.
-    let beaconRegion: CLBeaconRegion = {
-        let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "388891FA-7BB4-4A74-B127-6E240E7151A4")!, identifier: "Identifier")
+    // The beacon region that will be used as advertisement.
+    let adverBeaconRegion: CLBeaconRegion = {
+        let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0")!, identifier: "Identifier2")
         region.notifyEntryStateOnDisplay = true
         return region
     }()
+
     
-    let beaconRegion2: CLBeaconRegion = {
-        let region2 = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0")!, identifier: "Identifier2")
-        region2.notifyEntryStateOnDisplay = true
-        return region2
-    }()
+//    let beaconRegion: CLBeaconRegion = {
+//        let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "388891FA-7BB4-4A74-B127-6E240E7151A4")!, major: 1234, minor: 5555, identifier: "Identifier")
+//        region.notifyEntryStateOnDisplay = true
+//        return region
+//    }()
+//    
+//    let beaconRegion2: CLBeaconRegion = {
+//        let region2 = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0")!, major: 1234, minor: 5678, identifier: "Identifier2")
+//        region2.notifyEntryStateOnDisplay = true
+//        return region2
+//    }()
 
     /**
         Sets the location manager delegate to self. It is called when an instance is ready to process location
@@ -54,5 +62,25 @@ class NATOperation: NSObject, CLLocationManagerDelegate
      */
     func activateLocationManagerNotifications() {
         locationManager.delegate = self
+    }
+    
+    func getRegions() -> [CLBeaconRegion] {
+        var allRegions = [CLBeaconRegion]()
+        
+        let br1: CLBeaconRegion = {
+            let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "388891FA-7BB4-4A74-B127-6E240E7151A4")!, major: 1234, minor: 5555, identifier: "Identifier")
+            region.notifyEntryStateOnDisplay = true
+            return region
+        }()
+        allRegions.append(br1)
+        
+        let br2: CLBeaconRegion = {
+            let region2 = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0")!, major: 1234, minor: 5678, identifier: "Identifier2")
+            region2.notifyEntryStateOnDisplay = true
+            return region2
+        }()
+        allRegions.append(br2)
+        
+        return allRegions
     }
 }

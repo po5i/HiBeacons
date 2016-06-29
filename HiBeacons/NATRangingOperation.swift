@@ -106,11 +106,16 @@ class NATRangingOperation: NATOperation
         Turns on ranging (after all the checks have been passed).
      */
     func turnOnRanging() {
-        locationManager.startRangingBeaconsInRegion(beaconRegion)
-        print("Ranging turned on for beacons in region: \(beaconRegion)")
+        let regions = getRegions()
+        for beaconRegion in regions {
+            locationManager.startRangingBeaconsInRegion(beaconRegion)
+            print("Ranging turned on for beacons in region: \(beaconRegion)")
+        }
+        //locationManager.startRangingBeaconsInRegion(beaconRegion)
+        //print("Ranging turned on for beacons in region: \(beaconRegion)")
         
-        locationManager.startRangingBeaconsInRegion(beaconRegion2)
-        print("Ranging turned on for beacons in region2: \(beaconRegion2)")
+        //locationManager.startRangingBeaconsInRegion(beaconRegion2)
+        //print("Ranging turned on for beacons in region2: \(beaconRegion2)")
         
         delegate?.rangingOperationDidStartSuccessfully()
     }
@@ -123,9 +128,14 @@ class NATRangingOperation: NATOperation
             print("Didn't turn off ranging: Ranging already off.")
             return
         }
+        
+        let regions = getRegions()
+        for beaconRegion in regions {
+            locationManager.stopRangingBeaconsInRegion(beaconRegion)
+        }
 
-        locationManager.stopRangingBeaconsInRegion(beaconRegion)
-        locationManager.stopRangingBeaconsInRegion(beaconRegion2)
+        //locationManager.stopRangingBeaconsInRegion(beaconRegion)
+        //locationManager.stopRangingBeaconsInRegion(beaconRegion2)
 
         delegate?.rangingOperationDidStopSuccessfully()
         
